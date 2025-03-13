@@ -1,0 +1,35 @@
+class stack:
+    def __init__(self):
+        self.items=[]
+    def push(self,item):
+        self.items.append(item)
+    def pop(self):
+        if len(self.items)is 0:
+            print("stack is Empty")
+        else:
+            item=self.items[-1]
+            del(self.items[-1])
+            return item
+def Check_brakets(expr):
+    s=stack()
+    for token in expr:
+        if  token in "{[(":
+            s.push(token)
+        elif token in "}])":
+            if len (s.items)==1:
+                return False
+        else:
+            left=s.pop()
+            if (token =="}"and left!="{")or\
+            (token =="]"and left!="[")or\
+            (token ==")"and left!="("):
+                return False
+            if len (s,items)==0:
+                return True
+expr=input("enter the expersion")
+result= Check_brakets(expr)
+if result==0:
+    print("the given experssion is valid")
+else:
+    print("the given experssion is invalid")
+                    

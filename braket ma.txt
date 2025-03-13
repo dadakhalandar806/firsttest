@@ -6,7 +6,7 @@ class stack:
     def pop(self):
         if len(self.items)is 0:
             print("stack is Empty")
-        else:
+        else
             item=self.items[-1]
             del(self.items[-1])
             return item
